@@ -2,7 +2,6 @@ class Api::V1::UrlsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    binding.pry
       url = Url.new(url_params)
     if url.save
       render json: url, :only => [:id, :url]
@@ -12,7 +11,6 @@ class Api::V1::UrlsController < ApplicationController
 
   private
     def url_params
-      binding.pry
       params.require(:url).permit(:url)
     end
 end
