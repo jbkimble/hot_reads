@@ -1,1 +1,6 @@
 <h1>Welcome to the Hotreads URL Scoreboard</h1>
+
+<% @urls.each do |url| %>
+  Rank: <%= @count += 1 %> <br>
+  <%= url.url %> 
+<% end %>
