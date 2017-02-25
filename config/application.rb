@@ -16,6 +16,12 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.middleware.use Rack::Cors do
+  allow do
+    origins '*'
+    resource '/*', :headers => :any, :methods => :patch
+  end
+end
 
 
 module HotReads
